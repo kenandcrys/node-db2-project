@@ -1,28 +1,28 @@
-// STRETCH
-exports.seed = function(knex) {
-    // Deletes ALL existing entries
-    return knex('cars').del()
-      .then(function () {
-        // Inserts seed entries
-        return knex('cars').insert([
-          {
-            vin: '12345678901234567',
-            make: 'Toyota',
-            model: 'Camry',
-            mileage: 50000,
-            title: 'Clean',
-            transmission: 'Automatic'
-          },
-          {
-            vin: '23456789012345678',
-            make: 'Honda',
-            model: 'Civic',
-            mileage: 40000,
-            title: 'Salvage',
-            transmission: 'Manual'
-          },
-          // Add more seed data as needed
-        ]);
-      });
-  };
+const cars = [
+  {
+    vin: "1111111111111",
+    make: "Toyota",
+    model: "Prius",
+    mileage: 215000,
+    title: "clean",
+    transmission: "manual"
+  },
+  {
+    vin: "1111111111111",
+    make: "Toyota",
+    model: "corolla",
+    mileage: 115000,
+    title: "salvage",
+  },
+  {
+    vin: "1111111111111",
+    make: "Ford",
+    model: "Focus",
+    mileage: 15000,
+  },
   
+]
+exports.seed = async function(knex) {
+  await knex('cars').truncate();
+  await knex('cars').insert(cars);
+}
