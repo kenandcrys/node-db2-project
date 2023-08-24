@@ -66,7 +66,7 @@ const checkVinNumberUnique = async (req, res, next) => {
       return next({
         status: 400,
         message: `vin ${vin} already exists`,
-      });
+      })
     }
 
     next();
