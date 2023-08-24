@@ -1,6 +1,5 @@
 const express = require("express")
 const carRoutes = require('./cars/cars-router');
-const { restart } = require("nodemon");
 const server = express()
 
 server.use(express.json());
