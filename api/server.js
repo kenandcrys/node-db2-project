@@ -4,7 +4,7 @@ const server = express()
 
 server.use(express.json());
 
-server.use('api/cars', carRoutes)
+server.use('/api/cars', carRoutes)
 
 server.use('*', (req, res, next) => {
     next({
