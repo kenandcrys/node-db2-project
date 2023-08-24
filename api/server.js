@@ -15,7 +15,7 @@ server.use('*', (req, res, next) => {
 })
 
 server.use((err, req, res, next) => {
-    res.ststus(err.status || 500).json({
+    res.status(err.status || 500).json({
         message: err.message
     })
 })
