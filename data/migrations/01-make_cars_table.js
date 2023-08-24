@@ -15,5 +15,9 @@ exports.up = function(knex){
 
     tbl.string('transmission', 128);
 
-  })
+  });
+}
+
+exports.down = function(knex) {
+  return knex.schema.dropTableIfExists('cars')
 }
